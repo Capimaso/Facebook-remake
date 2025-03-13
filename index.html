@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="icon" href="facebookicon.png">
+    <style>
+        body{
+            background-color: rgb(48, 48, 48);
+            font-family: Arial;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+            align-items: center;
+        }
+        .icon{
+            position:absolute;
+            width: 50px;
+            height: 50px;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+        #botao{
+            position: absolute;
+            background-color: rgb(48, 48, 48);
+            color: white;
+            transform: translate(-50%, -50%);
+            top: 35vh;
+            left: 50vw;
+        }
+        #botao:hover{
+            background-color: rgb(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>
+        Fazer login:
+    </h1>
+    <input id="nome" type="text" placeholder="Nome"><br><br>
+    <input id="email" type="text" placeholder="Email"><br><br>
+    <input id="senha" type="password" placeholder="Senha"><br><br>
+    <p>Escolha uma foto de perfil:</p>
+    <input type="file" id="pfp"><br><br>
+    <button id="botao">Cadastrar</button>
+    <div class="icon">
+        <img src="facebookicon.png" width="50px" height="50px">
+    </div>
+    <script src="loginscript.js"></script>
+</body>
+</html>
