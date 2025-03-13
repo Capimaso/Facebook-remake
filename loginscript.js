@@ -12,16 +12,22 @@ function cadastrar(){
     alert("Cadastrado com sucesso!");
     window.location.href = 'home.html'; //Redireciona para a página da home
 }
-botao.addEventListener('mouseenter', ()=>{ //Quando o mouse entra no botão e nao tem nada escrito nos inputs, ele muda de lugar aleatoriamente
-    if (email.value.length == 0 && senha.value.length == 0 && nome.value.length == 0){
-    botao.style.top = String(Math.floor((Math.random() * 10)-5)+40) + "vh";
+
+function noinput(){
+    document.writeln("<p>Por favor, preencha todos os campos</p>");
+}
+
+botao.addEventListener('mousemove', ()=>{ //Quando o mouse entra no botão e nao tem nada escrito nos inputs, ele muda de lugar aleatoriamente
+    if (email.value.length == 0 || senha.value.length == 0 || nome.value.length == 0){
+    botao.style.top = String(Math.floor((Math.random() * 10)-5)+45) + "vh";
     botao.style.left = String(Math.floor((Math.random() * 25)-12.5)+50) + "vw";
+    document.getElementById('noinput').textContent = "Por favor, preencha todos os campos";
     }
     else{ //Se tiver algo escrito nos inputs, ele muda de cor
         botao.style.backgroundColor = "rgb(255, 255, 255, 0.5);";
         botao.style.cursor = "pointer";
+        botao.addEventListener('click', ()=>{ //Quando o botão é clicado, ele chama a função de cadastro
+            cadastrar();
+        });
     }
-});
-botao.addEventListener('click', ()=>{ //Quando o botão é clicado, ele chama a função de cadastro
-    cadastrar();
 });
